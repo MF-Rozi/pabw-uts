@@ -42,8 +42,6 @@ if (isset($_POST['login'])) {
                 }
                  unset($_SESSION['flash']);
             }
-
-
             ?>
             <div class="login-form" >
                 <form action="" method="post">
