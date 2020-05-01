@@ -7,6 +7,7 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/login.css">
+    <title>Login Admin PNS</title>
 </head>
 <?php
 if (isset($_POST['login'])) {
@@ -17,9 +18,10 @@ if (isset($_POST['login'])) {
     $placeholder->execute();
     $result =$placeholder->setFetchMode(PDO::FETCH_ASSOC);
     $output =$placeholder->fetchAll();
- ;
+
      if (count($output)>0){
-        if ($output[0]['password'] == $password) {
+
+        if ($output['password'] == $password) {
             header('location:dasbor.php');
         }else{
             $_SESSION['flash']['msg']='Password Anda Salah!';
@@ -59,7 +61,9 @@ if (isset($_POST['login'])) {
                         <a href="#" class="pull-right">Forgot Password?</a>
                     </div>
                 </form>
-                <p class="text-center"><a href="#">Create an Account</a></p>
+                <p class="text-center"><a href="register.php">Create an Account</a></p>
+		<a href="https://github.com/MF-Rozi/pabw-uts"><button type="button" class="btn btn-danger btn-block" name="login">Github</button>
+</a>
             </div>
 
         </div>
